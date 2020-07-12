@@ -33,7 +33,10 @@ class HashTable:
 
         OPTIONAL STRETCH: Research and implement DJB2
         '''
-        pass
+        hash_value = 5381
+        for char in key:
+            hash_value = ((hash_value << 5) + hash_value) + char
+        return hash_value
 
 
     def _hash_mod(self, key):
